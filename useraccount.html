@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+    <title>Spring Boot - POST-GET AJAX Example</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" />
+    <script type="text/javascript">
+    var user = "";
+    var retrievedToken = sessionStorage.getItem('secureToken');
+    function my_code(){
+      $.ajax({
+          type : "GET",
+          url : " http://localhost:8080/user/secure/getmyinfo",
+          headers: {"Authorization": retrievedToken},
+          success: function(result){
+
+                  console.log("user_id is : ");
+                  console.log(result);
+                  user=result.id;
+                  console.log(user);
+
+          },
+          error : function(e) {
+              //$("#getResultDiv").html("<strong>Error</strong>");
+              //console.log("ERROR: ", e);
+          }
+
+      });
+
+      $.ajax({
+        type : "POST",
+        contentType : "application/json",
+        url : "http://localhost:8080/ticket/secure/getAllTicketsForUser",
+        data : JSON.stringify(formData),
+        dataType : "json",
+        headers: {"Authorization": retrievedToken},
+          success: function(result){
+
+                  $('#getResultDiv .list-group li').remove();
+                  var custList = "";
+                  $.each(result, function(i, ticket){
+                      var ticket = "Customer " + i + ": FirstName=" + customer.name + " ,LastName=" + customer.surname + "<br\>";
+                      $('#getResultDiv .list-group').append('<li><h4 class="list-group-item">'+customer+'</h4></li>')
+                  });
+                  console.log("Success: ", result);
+
+          },
+          error : function(e) {
+              //$("#getResultDiv").html("<strong>Error</strong>");
+              //console.log("ERROR: ", e);
+          }
+      });
+      $("#homePageForm").submit(function(event) {
+          // Prevent the form from submitting via the browser.
+          event.preventDefault();
+          window.location.href = "home.html";
+      });
+    }
+    window.onload=my_code();
+</script>
+</head>
+<body>
+<div class="container">
+    <h1>TICKET RESERVATION SYSTEM</h1>
+    <form id="homePageForm">
+        <button type="submit" id="postBtn" class="btn btn-primary">Home</button>
+    </form>
+    </div>
+    <div id="postResultDiv">
+    </div>
+    <br/>
+    <div id="getdiv">
+    </div>
+    <div id="getResultDiv">
+        <ul class="list-group">
+        </ul>
+    </div>
+
+</div>
+</body>
+</html>

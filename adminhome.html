@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+    <title>Spring Boot - POST-GET AJAX Example</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="./getallusers.js"></script>
+    <script src="./createEvent.js"></script>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" />
+</head>
+<body>
+<div class="container">
+    <h1>Welcome to Admin Home Page</h1>
+    <div id="postdiv">
+        <form id="eventCreate">
+            <button type="submit" id="postBtn" class="btn btn-primary btn-lg">Create Event</button>
+        </form>
+    </div>
+    <div id="postResultDiv">
+    </div>
+    <br/>
+    <div id="getdiv">
+        <button id="getBtn" class="btn btn-primary btn-lg" >Get All Users</button>
+    </div>
+    <div id="getResultDiv">
+        <ul class="list-group">
+          
+        </ul>
+
+    </div>
+</div>
+</body>
+</html>

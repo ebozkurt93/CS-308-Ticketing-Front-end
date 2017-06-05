@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+    <title>Spring Boot - POST-GET AJAX Example</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="./createTicket.js"></script>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" />
+</head>
+<body>
+<div class="container">
+    <h1>Create Ticket</h1>
+    <div id="postResultDiv">
+
+    </div>
+    <br/>
+    <div id="getdiv">
+    </div>
+    <div id="getResultDiv">
+        <ul class="list-group">
+        </ul>
+        <ul class="pagination">
+        </ul>
+    </div>
+    <div id="postdiv">
+        <form id="ticketCreateForm">
+            <h1>For Purchase</h1>
+            <label>Seat Number: </label>
+            <input type="text" id="seat" class="form-control"/>
+            </br>
+            <button type="submit" id="postTicket" class="btn btn-primary">Purchase</button>
+            </br>
+        </form>
+        <form id="turnBackForm">
+          <button type="submit" id="backHome" class="btn btn-primary">Back</button>
+        </form>
+
+    </div>
+
+</div>
+</body>
+</html>

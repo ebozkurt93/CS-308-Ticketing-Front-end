@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+    <title>Spring Boot - POST-GET AJAX Example</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="./login.js"></script>
+    <script src="./register.js"></script>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" />
+</head>
+<body>
+<div class="container">
+    <h1>TICKET RESERVATION SYSTEM</h1>
+    <div id="postdiv">
+        <form id="registerForm">
+            <h3>Register For Free</h3>
+            <label>name</label>
+            <input type="text" id="name" class="form-control"/>
+            <label>surame</label>
+            <input type="text" id="surname" class="form-control"/>
+            <label>password</label>
+            <input type="text" id="password" class="form-control"/>
+            <label>mail</label>
+            <input type="text" id="mail" class="form-control"/>
+            <label>address</label>
+            <input type="text" id="address" class="form-control"/>
+            <button type="submit" id="postBtn" class="btn btn-primary">Register</button>
+        </form>
+        <form id="loginForm">
+            <h3>Login</h3>
+            <label>e-mail</label>
+            <input type="text" id="mail_login" class="form-control"/>
+            <label>password</label>
+            <input type="text" id="password_login" class="form-control"/>
+            <button type="submit" id="postBtn" class="btn btn-primary">Login</button>
+        </form>
+    </div>
+    <div id="postResultDiv">
+    </div>
+    <br/>
+    <div id="getdiv">
+    </div>
+    <div id="getResultDiv">
+        <ul class="list-group">
+        </ul>
+    </div>
+
+</div>
+</body>
+</html>

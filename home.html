@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+    <title>Spring Boot - POST-GET AJAX Example</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" />
+    <script type="text/javascript">
+
+    function my_code(){
+      $.ajax({
+          type : "GET",
+          url : " http://localhost:8080/event/getallevents",
+          success: function(result){
+                  $('#getResultDiv .list-group li').remove();
+                  var custList = "";
+                  $.each(result, function(i, event){
+                      $('#getResultDiv').append('<div class="media">' +
+                        '<div class="media-left">'+
+                          '<img src="'+ event.imageUrl1 + '" class="media-object" style="width:300px">'+
+                        '</div>'+
+                        '<div class="media-body">'+
+                          '<h3 class="media-heading">'+event.name+'</h3>'+
+                          '<h4>'+event.info+'</h4>'+
+                          '<button id="'+ i + '" class="btn btn-primary btn-lg" onClick="reply_click(this.id)">Get a Ticket</button>'+
+                        '</div>'+
+                      '</div>')
+
+                  });
+                  sessionStorage.setItem("events", JSON.stringify(result));
+                  console.log("Success: ", result);
+                  console.log(result[2].categories[1].name);
+                },
+          error : function(e) {
+              //$("#getResultDiv").html("<strong>Error</strong>");
+              //console.log("ERROR: ", e);
+          }
+      });
+    }
+    window.onload=my_code();
+    function reply_click(clicked_id)
+    {
+        sessionStorage.setItem("clickedTicket",clicked_id);
+        if(sessionStorage.getItem("secureToken") == null)
+        window.location.href = "index.html";
+        else
+        window.location.href = "createTicket.html";
+    }
+</script>
+</head>
+<body>
+<div class="container">
+    <h1>TICKET RESERVATION SYSTEM</h1>
+    </div>
+    <div id="postResultDiv">
+    </div>
+    <br/>
+    <div id="getdiv">
+    </div>
+    <div id="getResultDiv">
+        <ul class="list-group">
+        </ul>
+    </div>
+
+</div>
+</body>
+</html>

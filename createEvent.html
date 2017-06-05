@@ -1,0 +1,120 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+    <title>Spring Boot - POST-GET AJAX Example</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="./createEvent.js"></script>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" />
+</head>
+<body>
+<div class="container">
+    <h1>Event Creation Page</h1>
+    <div id="postdiv">
+        <form id="creationForm">
+          <label>Name</label>
+          <input type="text" id="eventName" class="form-control"/>
+          <label>Information</label>
+          <input type="text" id="eventInfo" class="form-control"/>
+          <label>Actor</label>
+          <input type="text" id="eventActor" class="form-control"/>
+          <label>Image Url-1</label>
+          <input type="text" id="eventIU1" class="form-control"/>
+          <label>Image Url-2</label>
+          <input type="text" id="eventIU2" class="form-control"/>
+          <label>Video Url</label>
+          <input type="text" id="eventVU" class="form-control"/>
+        </form>
+        <h3>Categories</h3>
+        <div class="form-group row">
+          <div class="col-xs-3">
+            <label for="ex2">name</label>
+            <input class="form-control" id="1category_name" type="text">
+          </div>
+          <div class="col-xs-3">
+            <label for="ex2">price</label>
+            <input class="form-control" id="1category_price" type="text">
+          </div>
+          <div class="col-xs-3">
+            <label for="ex2">start seat</label>
+            <input class="form-control" id="1category_start_seat" type="text">
+          </div>
+          <div class="col-xs-3">
+            <label for="ex2">end seat</label>
+            <input class="form-control" id="1category_end_seat" type="text">
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-xs-3">
+            <label for="ex2">name</label>
+            <input class="form-control" id="2category_name" type="text">
+          </div>
+          <div class="col-xs-3">
+            <label for="ex2">price</label>
+            <input class="form-control" id="2category_price" type="text">
+          </div>
+          <div class="col-xs-3">
+            <label for="ex2">start seat</label>
+            <input class="form-control" id="2category_start_seat" type="text">
+          </div>
+          <div class="col-xs-3">
+            <label for="ex2">end seat</label>
+            <input class="form-control" id="2category_end_seat" type="text">
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-xs-3">
+            <label for="ex2">name</label>
+            <input class="form-control" id="3category_name" type="text">
+          </div>
+          <div class="col-xs-3">
+            <label for="ex2">price</label>
+            <input class="form-control" id="3category_price" type="text">
+          </div>
+          <div class="col-xs-3">
+            <label for="ex2">start seat</label>
+            <input class="form-control" id="3category_start_seat" type="text">
+          </div>
+          <div class="col-xs-3">
+            <label for="ex2">end seat</label>
+            <input class="form-control" id="3category_end_seat" type="text">
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-xs-3">
+            <label for="ex2">name</label>
+            <input class="form-control" id="4category_name" type="text">
+          </div>
+          <div class="col-xs-3">
+            <label for="ex2">price</label>
+            <input class="form-control" id="4category_price" type="text">
+          </div>
+          <div class="col-xs-3">
+            <label for="ex2">start seat</label>
+            <input class="form-control" id="4category_start_seat" type="text">
+          </div>
+          <div class="col-xs-3">
+            <label for="ex2">end seat</label>
+            <input class="form-control" id="4category_end_seat" type="text">
+          </div>
+        </div>
+        <form id="addEvent">
+            <button type="submit" id="postBtn" class="btn btn-primary">Create</button>
+        </form>
+    </div>
+    <div id="postResultDiv">
+    </div>
+    <br/>
+    <div id="getdiv">
+    </div>
+    <div id="getResultDiv">
+        <ul class="list-group">
+        </ul>
+    </div>
+
+</div>
+</body>
+</html>
